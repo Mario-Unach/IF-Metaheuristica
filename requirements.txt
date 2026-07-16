@@ -8,3 +8,4 @@ ipykernel
 jupyter
 optuna
 plotly
+mealpy
