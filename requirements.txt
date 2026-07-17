@@ -9,3 +9,4 @@ jupyter
 optuna
 plotly
 mealpy
+scipy
