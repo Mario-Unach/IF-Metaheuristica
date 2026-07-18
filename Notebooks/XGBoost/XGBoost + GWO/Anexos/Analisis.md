@@ -70,7 +70,7 @@ La Tabla 1 resume las métricas principales obtenidas en el conjunto de prueba.
 #### 3.2.1. Modelo Base XGBoost
 El modelo sin optimización sirvió como referencia. Como se observa en la **Figura 1**, el modelo base presenta un *Recall* de 0.6089. La matriz de confusión muestra 808 Verdaderos Positivos (TP) y 519 Falsos Negativos (FN). Aunque la exactitud global es alta (0.7698), el modelo falla en detectar aproximadamente el 39% de los incumplimientos reales.
 
-![](Matriz_de_Confusion_Curva_ROC_y_Curva_Precision-Recall.png)
+![](Matriz_de_Confusion_Curva_ROC_y_Curva_Precision-Recall_GWO.png)
 > *Figura 1: Rendimiento del modelo base. Se observa un AUC-ROC de 0.7786 y un Average Precision (AP) de 0.5579.*
 
 #### 3.2.2. Optimización GWO (20 Iteraciones)
