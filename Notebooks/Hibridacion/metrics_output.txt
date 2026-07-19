@@ -1,0 +1,53 @@
+Librerías instaladas/verificadas en el kernel activo.
+
+Dimensiones de entrenamiento: (24000, 23)
+Scale Pos Weight calculado: 3.5206
+
+
+==================================================
+🚀 INICIANDO HIBRIDACIÓN (20 iteraciones totales)
+Fase 1: Lobo Gris (GWO) - Exploración Global (10 iteraciones)
+==================================================
+
+
+🎯 Mejor fitness GWO: 0.4453
+
+==================================================
+Fase 2: Polilla y Llama (MFO) - Explotación Local (10 iteraciones)
+==================================================
+
+
+🎯 Mejor fitness MFO (Final): 0.4451
+
+
+--- MÉTRICAS Híbrido GWO+MFO (20 Iters) ---
+PR-AUC: 0.5606 | F1-Score: 0.5492 | Recall: 0.6157 | Accuracy: 0.7765
+
+<Figure size 1800x500 with 4 Axes>
+--- IMAGE SAVED AS plot_1.png ---
+
+==================================================
+🚀 INICIANDO HIBRIDACIÓN (50 iteraciones totales)
+Fase 1: Lobo Gris (GWO) - Exploración Global (25 iteraciones)
+==================================================
+
+
+🎯 Mejor fitness GWO: 0.4442
+
+==================================================
+Fase 2: Polilla y Llama (MFO) - Explotación Local (25 iteraciones)
+==================================================
+
+
+🎯 Mejor fitness MFO (Final): 0.4425
+
+
+--- MÉTRICAS Híbrido GWO+MFO (50 Iters) ---
+PR-AUC: 0.5640 | F1-Score: 0.5512 | Recall: 0.6066 | Accuracy: 0.7815
+
+<Figure size 1800x500 with 4 Axes>
+--- IMAGE SAVED AS plot_2.png ---
+
+📊 TABLA COMPARATIVA - EFECTO DE LAS ITERACIONES EN LA HIBRIDACIÓN
+
+<pandas.io.formats.style.Styler at 0x1db78142da0>
