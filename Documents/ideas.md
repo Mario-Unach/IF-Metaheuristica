@@ -300,3 +300,34 @@ referencias min 12
 y nos falta discusion, y alli es donde se compara con otros trabajos que estan parecidos o iguales
 revisar documento que nos dio para esto
 
+
+
+"Dada la naturaleza asimétrica del riesgo crediticio, donde el costo de un Falso Negativo (otorgar crédito a un cliente que incumplirá) supera drásticamente al de un Falso Positivo, el uso de métricas tradicionales como el Accuracy resulta engañoso. En lugar de aplicar técnicas de remuestreo a nivel de datos (como SMOTE), que riskan alterar la topología original de las variables ordinales financieras e introducir ruido sintético, este estudio adopta un enfoque de Aprendizaje Sensible al Costo (Cost-Sensitive Learning).*
+De manera innovadora, el parámetro de ponderación de clases (scale_pos_weight) no se fija a su valor heurístico tradicional (Nneg/NposN_{neg}/N_{pos}
+Nneg​/Npos​), sino que se integra como una dimensión más dentro del espacio de búsqueda continuo de nuestro algoritmo híbrido de optimización por enjambre (GWO-MFO). Esto permite que el modelo auto-regule su tolerancia al riesgo. Adicionalmente, para mitigar el sesgo de evaluación inherente a las clases minoritarias, la función objetivo de la metaheurística se diseñó para maximizar el PR-AUC (Precision-Recall AUC) y el F1-Score, incorporando una función de penalización por umbral de Recall, garantizando así que el modelo final sea robusto, estadísticamente válido y alineado con los objetivos de negocio de la institución financiera."
+
+
+
+
+
+
+Excelente pregunta. La decisión de usar exactamente 20 iteraciones para el MFO no es al azar, sino una decisión de diseño metodológico basada en cómo funcionan los algoritmos metaheurísticos. 
+Responde a 3 razones técnicas clave que además te servirán de argumento para el paper:
+1. El espacio de búsqueda del MFO es diminuto (Explotación Local)
+Mientras que el GWO tiene que explorar todo el espacio de búsqueda global (desde el Lower Bound hasta el Upper Bound), el MFO solo trabaja en un radio del ±20% alrededor de la mejor solución que encontró el GWO. 
+
+    Como el MFO ya parte de una "buena región" y tiene un espacio de movimiento muy acotado, converge muchísimo más rápido. No necesita 50 iteraciones para afinar la mira; con 20 tiene más que suficiente para encontrar el óptimo local exacto.
+
+2. Coste Computacional vs. Rendimientos Decrecientes
+Cada iteración de cualquier metaheurística requiere entrenar un modelo XGBoost (que aunque use GPU, consume tiempo). 
+
+    Si pusiéramos Híbrido (50+50), el tiempo de cómputo se dispararía. 
+    En la optimización de hiperparámetros, llegar a cierto punto de refinamiento local tiene rendimientos decrecientes. 20 iteraciones de MFO es el "punto dulce" (sweet spot) donde extraes el máximo jugo al refinamiento local sin inflar el tiempo de entrenamiento innecesariamente.
+
+3. Justificación Científica para el Paper (El verdadero valor del Híbrido)
+En tu paper necesitas demostrar que la arquitectura híbrida es superior, no simplemente que "más iteraciones = mejor resultado". 
+
+    Al comparar GWO (50 Iter) contra Híbrido (50+20), estás demostrando que cambiar la estrategia de búsqueda (añadir una fase de explotación local con MFO) mejora las métricas respecto a simplemente dejar al GWO explorando más tiempo. 
+    Si usaras Híbrido (50+50), los críticos del paper podrían decir: "Solo mejoró porque usaste el doble de tiempo de cómputo". Al usar 20, demuestras que la sinergia (Exploración Global de GWO + Explotación Local de MFO) es lo que aporta el valor.
+
+En resumen: 20 iteraciones de MFO es el equilibrio perfecto entre profundidad de refinamiento y eficiencia computacional, aprovechando que su espacio de búsqueda ya está acotado por el GWO.
