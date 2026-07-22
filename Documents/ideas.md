@@ -281,3 +281,22 @@ Un buen título debe mencionar el método, el modelo base y el problema que resu
 
 
 
+
+
+
+
+ya nos envio como poner nombes referencias etc
+en vez de item index palabras clabes y abajo abstract en ingles
+
+primary key
+
+poner mas metricas con sus formulas y en metodologia poner que los datos estan desbalanceados y se usara para eso
+
+en la discusion porque poner los recall y demas porque son demasiados bajos etc yosea porque sale demasiado bajo y respaldar
+
+en agradecimientos se poner solo cuando alguien ayuda a publicar, retirar agradecimientos
+
+referencias min 12
+y nos falta discusion, y alli es donde se compara con otros trabajos que estan parecidos o iguales
+revisar documento que nos dio para esto
+
