@@ -1,3 +1,5 @@
+// archivo que contiene los resultados de la robustez del modelo XGBoost optimizado con Optuna
+
 {
   "seeds": [
     42,
@@ -68,5 +70,6 @@
       0.5499541449225679,
       0.5575938775026777
     ]
-  }
+  },
+  "total_time_hours": 2.867592152688238
 }

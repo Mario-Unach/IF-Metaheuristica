@@ -1,3 +1,5 @@
+# este archivo son los resultado de los trials del modelo A de optuna 
+
 number,value,datetime_start,datetime_complete,duration,params_colsample_bytree,params_learning_rate,params_max_depth,params_n_estimators,params_scale_pos_weight,params_subsample,state
 0,0.49417745724659273,2026-07-23 20:30:49.005221,2026-07-23 20:30:50.990913,0 days 00:00:01.985692,0.6624074561769746,0.07259248719561363,10,287,2.467983561008608,0.8394633936788146,COMPLETE
 1,0.5276235037662341,2026-07-23 20:30:50.995042,2026-07-23 20:30:52.490649,0 days 00:00:01.495607,0.608233797718321,0.05092911283433821,9,129,4.909729556485983,0.8832290311184181,COMPLETE
