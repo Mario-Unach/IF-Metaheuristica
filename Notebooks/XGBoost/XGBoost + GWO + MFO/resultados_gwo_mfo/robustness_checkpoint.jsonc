@@ -1,3 +1,4 @@
+// este es el archivo de checkpoints de la robustez del modelo XGBoost optimizado con GWO y MFO
 {
   "seeds": [
     42,
