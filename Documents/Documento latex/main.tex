@@ -388,7 +388,7 @@ Hiperparámetro & Inf. & Sup. & Tipo \\
 Se realizan 10 ejecuciones independientes con semillas $\{42, 123, 456, 789, 1011, 1213, 1415, 1617, 1819, 2021\}$. La normalidad se verifica mediante la prueba de Shapiro--Wilk~\cite{wilcoxon1945}. La significancia se evalúa mediante la prueba de rangos con signo de Wilcoxon unilateral~\cite{wilcoxon1945, demsar2006} con corrección de Holm--Bonferroni para comparaciones múltiples ($\alpha = 0.05$). Se reportan intervalos de confianza del 95\% basados en la distribución $t$ de Student.
 
 \subsection{Entorno Computacional}
-Todos los experimentos se ejecutan en Kaggle con GPU NVIDIA (CUDA habilitado), XGBoost~3.3.0, Python~3.12, Optuna~4.9.0 y Mealpy~3.3.0 (GWO, MFO). El tiempo total de experimentación fue de aproximadamente 6.7~horas (3.75~h para GWO--MFO y 2.93~h para Optuna).
+Todos los experimentos se ejecutan en Kaggle con GPU NVIDIA (CUDA habilitado), XGBoost~3.3.0, Python~3.12, Optuna~4.9.0 y Mealpy~3.3.0 (GWO, MFO). El tiempo total de experimentación fue de aproximadamente 7.1~horas (3.75~h para GWO--MFO y 3.30~h para Optuna).
 
 % ============================================================
 % IV. RESULTADOS
@@ -673,7 +673,7 @@ Se identifican las siguientes limitaciones que deben considerarse al interpretar
     \item \textbf{Tamaño de muestra estadístico:} 10 ejecuciones proporcionan potencia estadística limitada para detectar diferencias pequeñas entre métodos optimizados.
     \item \textbf{Umbral fijo:} F1, recall y exactitud se reportan en el umbral 0.5. Un análisis de umbral óptimo podría mejorar estas métricas~\cite{fawcett2006}.
     \item \textbf{Sin validación cruzada anidada:} La evaluación final usa un único split 80/20~\cite{demsar2006}, lo que puede introducir optimismo en las estimaciones.
-    \item \textbf{Presupuesto no exactamente equivalente:} GWO-30 realiza 1\,800 OFEs (30 épocas $\times$ 20 agentes $\times$ 3 folds) frente a 1\,800 de Optuna-1\,400 (600 trials $\times$ 3 folds), pero la distribución temporal de las evaluaciones difiere.
+    \item \textbf{Presupuesto no exactamente equivalente:} GWO-30 realiza 1\,800 OFEs (30 épocas $\times$ 20 agentes $\times$ 3 folds) frente a 1\,800 de Optuna-600 (600 trials $\times$ 3 folds), pero la distribución temporal de las evaluaciones difiere.
 \end{itemize}
 
 \subsection{Implicaciones Prácticas}
