@@ -8,5 +8,5 @@ ipykernel
 jupyter
 optuna
 plotly
-mealpy=3.0.3
+mealpy==3.0.3
 scipy
