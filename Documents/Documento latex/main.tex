@@ -86,7 +86,7 @@ Riobamba, Ecuador\\
 \renewcommand{\IEEEkeywordsname}{Palabras clave}
 
 \begin{abstract}
-La predicción del incumplimiento crediticio es una tarea crítica en la gestión del riesgo financiero, particularmente desafiante cuando los conjuntos de datos presentan un desbalance severo de clases. Este estudio presenta un análisis comparativo exhaustivo de estrategias de optimización de hiperparámetros para el clasificador eXtreme Gradient Boosting (XGBoost) aplicado al dataset UCI Credit Card Default (30\,000 instancias, 23 características, ${\approx}$22.1\% clase positiva). Se evalúan cinco enfoques bajo presupuestos computacionales controlados: (i)~Grey Wolf Optimizer (GWO) con 15 y 30 iteraciones, (ii)~una estrategia híbrida de relevo GWO--Moth-Flame Optimization (MFO) con configuraciones (8+7) y (21+9) que combina exploración global con explotación local, y (iii)~optimización bayesiana mediante Optuna con 800 y 1\,400 trials. Todos los modelos se evalúan utilizando el área bajo la curva Precision--Recall (PR-AUC) como métrica principal, complementada con ROC-AUC, F1-score, recall y exactitud. Una función de aptitud basada en la media geométrica $\sqrt{\text{PR-AUC} \times F_1}$ con restricción de suelo en recall ($R \geq 0.55$) y factor de penalización $\lambda = 0.8$ guía la búsqueda metaheurística. La robustez se verifica mediante 10 ejecuciones independientes por configuración con semillas aleatorias distintas, y la significancia estadística se confirma mediante la prueba de Wilcoxon con corrección de Holm--Bonferroni ($p < 0.05$) y verificación de normalidad Shapiro--Wilk. Los resultados demuestran que el híbrido GWO(21)+MFO(9) alcanza el PR-AUC medio más alto de 0.5520 (+1.56\% sobre el modelo base), mientras que Optuna (1\,400 trials) alcanza 0.5543 (+1.55\%). Ambos enfoques producen mejoras estadísticamente significativas sobre el modelo base tras la corrección por comparaciones múltiples. Notablemente, la fase de refinamiento MFO no aporta una mejora estadísticamente significativa sobre GWO puro ($p > 0.21$), un resultado negativo honesto que se analiza en detalle. Se discute el techo inherentemente limitado de las métricas predictivas en scoring crediticio bajo desbalance de clases y se contextualizan los hallazgos dentro de la literatura más amplia.
+La predicción del incumplimiento crediticio es una tarea crítica en la gestión del riesgo financiero, particularmente desafiante cuando los conjuntos de datos presentan un desbalance severo de clases. Este estudio presenta un análisis comparativo exhaustivo de estrategias de optimización de hiperparámetros para el clasificador eXtreme Gradient Boosting (XGBoost) aplicado al dataset UCI Credit Card Default (30\,000 instancias, 23 características, ${\approx}$22.1\% clase positiva). Se evalúan cinco enfoques bajo presupuestos computacionales controlados: (i)~Grey Wolf Optimizer (GWO) con 15 y 30 iteraciones, (ii)~una estrategia híbrida de relevo GWO--Moth-Flame Optimization (MFO) con configuraciones (8+7) y (21+9) que combina exploración global con explotación local, y (iii)~optimización bayesiana mediante Optuna con 300 y 600 trials. Todos los modelos se evalúan utilizando el área bajo la curva Precision--Recall (PR-AUC) como métrica principal, complementada con ROC-AUC, F1-score, recall y exactitud. Una función de aptitud basada en la media geométrica $\sqrt{\text{PR-AUC} \times F_1}$ con restricción de suelo en recall ($R \geq 0.55$) y factor de penalización $\lambda = 0.8$ guía la búsqueda metaheurística. La robustez se verifica mediante 10 ejecuciones independientes por configuración con semillas aleatorias distintas, y la significancia estadística se confirma mediante la prueba de Wilcoxon con corrección de Holm--Bonferroni ($p < 0.05$) y verificación de normalidad Shapiro--Wilk. Los resultados demuestran que, entre los métodos metaheurísticos, el híbrido GWO(21)+MFO(9) alcanza el PR-AUC medio más alto en robustez de 0.5525 (+1.41\% sobre el modelo base), mientras que Optuna (600 trials) alcanza un PR-AUC medio de 0.5530 (+1.51\%) y un PR-AUC puntual de 0.5543 (+1.55\%). Ambos enfoques producen mejoras estadísticamente significativas sobre el modelo base tras la corrección por comparaciones múltiples. Notablemente, la fase de refinamiento MFO no aporta una mejora estadísticamente significativa sobre GWO puro ($p > 0.31$), un resultado negativo honesto que se analiza en detalle. Se discute el techo inherentemente limitado de las métricas predictivas en scoring crediticio bajo desbalance de clases y se contextualizan los hallazgos dentro de la literatura más amplia.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -100,7 +100,7 @@ XGBoost, Grey Wolf Optimizer, Moth-Flame Optimization, optimización bayesiana, 
 \renewcommand{\IEEEkeywordsname}{Index Terms}
 
 \begin{abstract}
-Credit default prediction is a critical task in financial risk management, particularly challenging when datasets exhibit severe class imbalance. This study presents a comprehensive comparative analysis of hyperparameter optimization strategies for the eXtreme Gradient Boosting (XGBoost) classifier applied to the UCI Credit Card Default dataset (30\,000 instances, 23 features, ${\approx}$22.1\% positive class). We evaluate five optimization approaches under controlled computational budgets: (i)~Grey Wolf Optimizer (GWO) with 15 and 30 iterations, (ii)~a two-phase hybrid GWO--Moth-Flame Optimization (MFO) relay strategy with configurations (8+7) and (21+9) combining global exploration with local exploitation, and (iii)~Bayesian optimization via Optuna with 800 and 1\,400 trials. All models are assessed using the Precision--Recall Area Under the Curve (PR-AUC) as the primary metric, supplemented by ROC-AUC, F1-score, recall, and accuracy. A geometric-mean fitness function $\sqrt{\text{PR-AUC} \times F_1}$ with a recall floor constraint ($R \geq 0.55$) and penalty factor $\lambda = 0.8$ guides the metaheuristic search. Robustness is verified through 10 independent executions per configuration with distinct random seeds, and statistical significance is confirmed via the Wilcoxon signed-rank test with Holm--Bonferroni correction ($p < 0.05$) and Shapiro--Wilk normality verification. Results demonstrate that the hybrid GWO(21)+MFO(9) achieves the highest mean PR-AUC of 0.5520 (+1.56\% over the baseline), while Optuna (1\,400 trials) reaches 0.5543 (+1.55\%). Both approaches yield statistically significant improvements over the baseline after multiple-comparison correction. Notably, the MFO refinement phase does not contribute a statistically significant improvement over GWO alone ($p > 0.21$), an honest negative result that we analyze in detail. We discuss the inherently limited ceiling of predictive metrics in credit scoring under class imbalance, contextualize our findings within the broader literature, and provide transparent declarations of methodological limitations.
+Credit default prediction is a critical task in financial risk management, particularly challenging when datasets exhibit severe class imbalance. This study presents a comprehensive comparative analysis of hyperparameter optimization strategies for the eXtreme Gradient Boosting (XGBoost) classifier applied to the UCI Credit Card Default dataset (30\,000 instances, 23 features, ${\approx}$22.1\% positive class). We evaluate five optimization approaches under controlled computational budgets: (i)~Grey Wolf Optimizer (GWO) with 15 and 30 iterations, (ii)~a two-phase hybrid GWO--Moth-Flame Optimization (MFO) relay strategy with configurations (8+7) and (21+9) combining global exploration with local exploitation, and (iii)~Bayesian optimization via Optuna with 300 and 600 trials. All models are assessed using the Precision--Recall Area Under the Curve (PR-AUC) as the primary metric, supplemented by ROC-AUC, F1-score, recall, and accuracy. A geometric-mean fitness function $\sqrt{\text{PR-AUC} \times F_1}$ with a recall floor constraint ($R \geq 0.55$) and penalty factor $\lambda = 0.8$ guides the metaheuristic search. Robustness is verified through 10 independent executions per configuration with distinct random seeds, and statistical significance is confirmed via the Wilcoxon signed-rank test with Holm--Bonferroni correction ($p < 0.05$) and Shapiro--Wilk normality verification. Results demonstrate that, among metaheuristic methods, the hybrid GWO(21)+MFO(9) achieves the highest mean PR-AUC in robustness analysis of 0.5525 (+1.41\% over the baseline), while Optuna (600 trials) reaches a mean PR-AUC of 0.5530 (+1.51\%) and a punctual PR-AUC of 0.5543 (+1.55\%). Both approaches yield statistically significant improvements over the baseline after multiple-comparison correction. Notably, the MFO refinement phase does not contribute a statistically significant improvement over GWO alone ($p > 0.31$), an honest negative result that we analyze in detail. We discuss the inherently limited ceiling of predictive metrics in credit scoring under class imbalance, contextualize our findings within the broader literature, and provide transparent declarations of methodological limitations.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -172,7 +172,7 @@ La Fig.~\ref{fig:pipeline} ilustra el pipeline experimental completo del estudio
     
     \node[box, fill=orange!10, below=0.9cm of base, xshift=-3.2cm] (gwo) {GWO\\15/30 iter};
     \node[box, fill=orange!10, below=0.9cm of base] (hyb) {Híbrido\\GWO$\to$MFO};
-    \node[box, fill=orange!10, below=0.9cm of base, xshift=3.2cm] (opt) {Optuna\\800/1400};
+    \node[box, fill=orange!10, below=0.9cm of base, xshift=3.2cm] (opt) {Optuna\\300/600};
     
     \node[box, fill=red!10, below=0.9cm of hyb] (eval) {Evaluación\\PR-AUC, F1, R, Acc};
     \node[box, fill=red!10, right=1.2cm of eval] (rob) {Robustez\\10 ejecuciones};
@@ -348,7 +348,7 @@ Optuna~\cite{akiba2019} implementa TPE~\cite{bergstra2011} que modela la distrib
     p(\mathbf{x}|y) = \begin{cases} l(\mathbf{x}) & \text{si } y < y^* \\ g(\mathbf{x}) & \text{si } y \geq y^* \end{cases}
     \label{eq:tpe}
 \end{equation}
-La función de adquisición maximiza la ratio $l(\mathbf{x})/g(\mathbf{x})$. Se configuran: Escenario~A (800 trials, 900 OFEs con CV-3) y Escenario~B (1\,400 trials, 1\,800 OFEs con CV-3).
+La función de adquisición maximiza la ratio $l(\mathbf{x})/g(\mathbf{x})$. Se configuran: Escenario~A (300 trials, 900 OFEs con CV-3) y Escenario~B (600 trials, 1\,800 OFEs con CV-3).
 
 \subsection{Función de Aptitud}
 Para la optimización metaheurística se emplea:
@@ -388,7 +388,7 @@ Hiperparámetro & Inf. & Sup. & Tipo \\
 Se realizan 10 ejecuciones independientes con semillas $\{42, 123, 456, 789, 1011, 1213, 1415, 1617, 1819, 2021\}$. La normalidad se verifica mediante la prueba de Shapiro--Wilk~\cite{wilcoxon1945}. La significancia se evalúa mediante la prueba de rangos con signo de Wilcoxon unilateral~\cite{wilcoxon1945, demsar2006} con corrección de Holm--Bonferroni para comparaciones múltiples ($\alpha = 0.05$). Se reportan intervalos de confianza del 95\% basados en la distribución $t$ de Student.
 
 \subsection{Entorno Computacional}
-Todos los experimentos se ejecutan en Kaggle con GPU NVIDIA (CUDA habilitado), XGBoost~3.2.0, Python~3.12, Optuna y Mealpy~3.3.0 (GWO, MFO). El tiempo total de experimentación fue de aproximadamente 7.2~horas (4.24~h para GWO--MFO y 2.93~h para Optuna).
+Todos los experimentos se ejecutan en Kaggle con GPU NVIDIA (CUDA habilitado), XGBoost~3.3.0, Python~3.12, Optuna~4.9.0 y Mealpy~3.3.0 (GWO, MFO). El tiempo total de experimentación fue de aproximadamente 6.7~horas (3.75~h para GWO--MFO y 2.93~h para Optuna).
 
 % ============================================================
 % IV. RESULTADOS
@@ -402,7 +402,7 @@ La Fig.~\ref{fig:base_gwo} presenta la evaluación del modelo base XGBoost con c
 \begin{figure*}[!t]
     \centering
     \includegraphics[width=0.95\textwidth]{resultados_gwo_mfo/eval_BASE.png}
-    \caption{Evaluación del modelo base XGBoost: matriz de confusión, curva ROC (AUC = 0.7677) y curva Precision--Recall (PR-AUC = 0.5404). F1 = 0.5290, Recall = 0.5878, Accuracy = 0.7685.}
+    \caption{Evaluación del modelo base XGBoost: matriz de confusión, curva ROC (AUC = 0.7687) y curva Precision--Recall (PR-AUC = 0.5459). F1 = 0.5307, Recall = 0.5870, Accuracy = 0.7703.}
     \label{fig:base_gwo}
 \end{figure*}
 
@@ -412,14 +412,14 @@ Las Figs.~\ref{fig:gwo15} y~\ref{fig:gwo30} presentan los resultados de GWO con 
 \begin{figure*}[!t]
     \centering
     \includegraphics[width=0.95\textwidth]{resultados_gwo_mfo/eval_GWO_15.png}
-    \caption{XGBoost + GWO (15 iter, 900 OFEs). PR-AUC = 0.5535, F1 = 0.5406, Recall = 0.5750. Mejores parámetros: \texttt{n\_est}=360, \texttt{depth}=5, \texttt{lr}=0.046.}
+    \caption{XGBoost + GWO (15 iter, 900 OFEs). PR-AUC = 0.5467, ROC-AUC = 0.7698, F1 = 0.5283, Recall = 0.5667. Mejores parámetros: \texttt{n\_est}=423, \texttt{depth}=5, \texttt{lr}=0.072.}
     \label{fig:gwo15}
 \end{figure*}
 
 \begin{figure*}[!t]
     \centering
     \includegraphics[width=0.95\textwidth]{resultados_gwo_mfo/eval_GWO_30.png}
-    \caption{XGBoost + GWO (30 iter, 1\,800 OFEs). PR-AUC = 0.5515, ROC-AUC = 0.7752, F1 = 0.5338, Recall = 0.5682. Mejores parámetros: \texttt{n\_est}=379, \texttt{depth}=6, \texttt{lr}=0.036.}
+    \caption{XGBoost + GWO (30 iter, 1\,800 OFEs). PR-AUC = 0.5517, ROC-AUC = 0.7756, F1 = 0.5415, Recall = 0.5825. Mejores parámetros: \texttt{n\_est}=461, \texttt{depth}=5, \texttt{lr}=0.034.}
     \label{fig:gwo30}
 \end{figure*}
 
@@ -429,14 +429,14 @@ Las Figs.~\ref{fig:hyb87} y~\ref{fig:hyb219} presentan los resultados de la estr
 \begin{figure*}[!t]
     \centering
     \includegraphics[width=0.95\textwidth]{resultados_gwo_mfo/eval_HYB_8_7.png}
-    \caption{Híbrido GWO(8)+MFO(7), 900 OFEs. PR-AUC = 0.5541, ROC-AUC = 0.7755, F1 = 0.5406, Recall = 0.5750, Accuracy = 0.7838.}
+    \caption{Híbrido GWO(8)+MFO(7), 900 OFEs. PR-AUC = 0.5393, ROC-AUC = 0.7707, F1 = 0.5378, Recall = 0.5705, Accuracy = 0.7832.}
     \label{fig:hyb87}
 \end{figure*}
 
 \begin{figure*}[!t]
     \centering
     \includegraphics[width=0.95\textwidth]{resultados_gwo_mfo/eval_HYB_21_9.png}
-    \caption{Híbrido GWO(21)+MFO(9), 1\,800 OFEs. PR-AUC = 0.5507, ROC-AUC = 0.7773, F1 = 0.5434, Recall = 0.5780, Accuracy = 0.7852.}
+    \caption{Híbrido GWO(21)+MFO(9), 1\,800 OFEs. PR-AUC = 0.5346, ROC-AUC = 0.7647, F1 = 0.5220, Recall = 0.5365, Accuracy = 0.7827.}
     \label{fig:hyb219}
 \end{figure*}
 
@@ -446,14 +446,14 @@ Las Figs.~\ref{fig:opt300} y~\ref{fig:opt600} presentan los resultados de la opt
 \begin{figure*}[!t]
     \centering
     \includegraphics[width=0.95\textwidth]{resultados_optuna/eval_OPTUNA_300.png}
-    \caption{XGBoost + Optuna (800 trials, 900 OFEs). PR-AUC = 0.5541, ROC-AUC = 0.7772, F1 = 0.5450, Recall = 0.5818, Accuracy = 0.7852.}
+    \caption{XGBoost + Optuna (300 trials, 900 OFEs). PR-AUC = 0.5541, ROC-AUC = 0.7772, F1 = 0.5450, Recall = 0.5818, Accuracy = 0.7852.}
     \label{fig:opt300}
 \end{figure*}
 
 \begin{figure*}[!t]
     \centering
     \includegraphics[width=0.95\textwidth]{resultados_optuna/eval_OPTUNA_600.png}
-    \caption{XGBoost + Optuna (1\,400 trials, 1\,800 OFEs). PR-AUC = 0.5543, ROC-AUC = 0.7777, F1 = 0.5444, Recall = 0.5772, Accuracy = 0.7863.}
+    \caption{XGBoost + Optuna (600 trials, 1\,800 OFEs). PR-AUC = 0.5543, ROC-AUC = 0.7777, F1 = 0.5444, Recall = 0.5772, Accuracy = 0.7863.}
     \label{fig:opt600}
 \end{figure*}
 
@@ -463,7 +463,7 @@ La Fig.~\ref{fig:convergencia} muestra la curva de convergencia de la optimizaci
 \begin{figure}[!t]
     \centering
     \includegraphics[width=\columnwidth]{resultados_optuna/convergencia_optuna.png}
-    \caption{Convergencia de Optuna: evolución del mejor score (Geo-Mean) en función del número de trials para los escenarios A (800) y B (1\,400).}
+    \caption{Convergencia de Optuna: evolución del mejor score (Geo-Mean) en función del número de trials para los escenarios A (300) y B (600).}
     \label{fig:convergencia}
 \end{figure}
 
@@ -478,17 +478,17 @@ La Tabla~\ref{tab:results} consolida todas las métricas de evaluación. La Tabl
 \toprule
 Modelo & PR-AUC & ROC-AUC & F1-Score & Recall & Accuracy & Geo-Mean & $\Delta$ PR-AUC \\
 \midrule
-\multicolumn{8}{l}{\textit{Experimento GWO--MFO (Base: PR-AUC = 0.5404)}} \\
-XGBoost Base & 0.5404 & 0.7677 & 0.5290 & \textbf{0.5878} & 0.7685 & 0.5346 & -- \\
-GWO (15 Iter) & 0.5535 & -- & 0.5406 & 0.5750 & -- & -- & +2.42\% \\
-GWO (30 Iter) & 0.5515 & 0.7752 & 0.5338 & 0.5682 & 0.7805 & -- & +2.05\% \\
-Híbrido (8+7) & \textbf{0.5541} & 0.7755 & \textbf{0.5406} & 0.5750 & 0.7838 & -- & +2.53\% \\
-Híbrido (21+9) & 0.5507 & \textbf{0.7773} & 0.5434 & 0.5780 & \textbf{0.7852} & -- & +1.91\% \\
+\multicolumn{8}{l}{\textit{Experimento GWO--MFO (Base: PR-AUC = 0.5459)}} \\
+XGBoost Base & 0.5459 & 0.7687 & 0.5307 & \textbf{0.5870} & 0.7703 & 0.5382 & -- \\
+GWO (15 Iter) & 0.5467 & 0.7698 & 0.5283 & 0.5667 & 0.7762 & 0.5374 & +0.15\% \\
+GWO (30 Iter) & \textbf{0.5517} & \textbf{0.7756} & \textbf{0.5415} & 0.5825 & 0.7818 & \textbf{0.5466} & +1.07\% \\
+Híbrido (8+7) & 0.5393 & 0.7707 & 0.5378 & 0.5705 & 0.7832 & 0.5386 & $-$1.21\% \\
+Híbrido (21+9) & 0.5346 & 0.7647 & 0.5220 & 0.5365 & \textbf{0.7827} & 0.5283 & $-$2.06\% \\
 \midrule
 \multicolumn{8}{l}{\textit{Experimento Optuna (Base: PR-AUC = 0.5459)}} \\
 XGBoost Base & 0.5459 & 0.7687 & 0.5307 & \textbf{0.5870} & 0.7703 & 0.5382 & -- \\
-Optuna (800 Trials) & 0.5541 & 0.7772 & \textbf{0.5450} & 0.5818 & 0.7852 & \textbf{0.5495} & +1.51\% \\
-Optuna (1\,400 Trials) & \textbf{0.5543} & \textbf{0.7777} & 0.5444 & 0.5772 & \textbf{0.7863} & 0.5494 & +1.55\% \\
+Optuna (300 trials) & 0.5541 & 0.7772 & \textbf{0.5450} & 0.5818 & 0.7852 & \textbf{0.5495} & +1.51\% \\
+Optuna (600 trials) & \textbf{0.5543} & \textbf{0.7777} & 0.5444 & 0.5772 & \textbf{0.7863} & 0.5494 & +1.55\% \\
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -503,10 +503,11 @@ Optuna (1\,400 Trials) & \textbf{0.5543} & \textbf{0.7777} & 0.5444 & 0.5772 & \
 Método & \texttt{n\_est} & \texttt{depth} & \texttt{lr} & \texttt{subsample} & \texttt{colsample} & \texttt{spw} \\
 \midrule
 Base (fijo) & 500 & 6 & 0.050 & 0.800 & 0.800 & 3.521 \\
-GWO (15 Iter) & 360 & 5 & 0.0456 & 0.786 & 1.000 & 3.050 \\
-GWO (30 Iter) & 379 & 6 & 0.0356 & 0.713 & 0.814 & 2.978 \\
-Híbrido (21+9) & 323 & 5 & 0.0397 & 0.654 & 0.811 & 2.902 \\
-Optuna (800) & 281 & 7 & 0.0167 & 0.642 & 0.810 & 3.120 \\
+GWO (15 Iter) & 423 & 5 & 0.0721 & 0.713 & 0.749 & 3.051 \\
+GWO (30 Iter) & 461 & 5 & 0.0337 & 0.735 & 0.600 & 2.999 \\
+Híbrido (8+7) & 235 & 5 & 0.0815 & 0.643 & 0.685 & 2.829 \\
+Híbrido (21+9) & 337 & 6 & 0.0857 & 0.765 & 0.945 & 2.853 \\
+Optuna (300) & 281 & 7 & 0.0167 & 0.642 & 0.810 & 3.120 \\
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -523,12 +524,14 @@ La Tabla~\ref{tab:confusion} detalla las matrices de confusión en el conjunto d
 \toprule
 Modelo & $TP$ & $FP$ & $TN$ & $FN$ \\
 \midrule
-Base (GWO-MFO) & 780 & 842 & 3\,831 & 547 \\
-GWO (30 Iter) & 754 & 744 & 3\,929 & 573 \\
-Híbrido (8+7) & 763 & 733 & 3\,940 & 564 \\
+Base (GWO-MFO) & 779 & 830 & 3\,843 & 548 \\
+GWO (15 Iter) & 752 & 768 & 3\,905 & 575 \\
+GWO (30 Iter) & 773 & 755 & 3\,918 & 554 \\
+Híbrido (8+7) & 757 & 731 & 3\,942 & 570 \\
+Híbrido (21+9) & 712 & 689 & 3\,984 & 615 \\
 Base (Optuna) & 779 & 830 & 3\,843 & 548 \\
-Optuna (800) & 772 & 734 & 3\,939 & 555 \\
-Optuna (1\,400) & 766 & 721 & 3\,952 & 561 \\
+Optuna (300) & 772 & 734 & 3\,939 & 555 \\
+Optuna (600) & 766 & 721 & 3\,952 & 561 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -562,16 +565,16 @@ La Tabla~\ref{tab:stats} resume los intervalos de confianza y la verificación d
 \toprule
 Modelo & Media & IC$_{\text{inf}}$ & IC$_{\text{sup}}$ & Varianza \\
 \midrule
-XGBoost Base & 0.5435 & 0.5413 & 0.5457 & 9.40e$-$06 \\
-GWO (15) & 0.5515 & 0.5482 & 0.5547 & 2.05e$-$05 \\
-GWO (30) & 0.5509 & 0.5472 & 0.5545 & 2.57e$-$05 \\
-Híbrido (8+7) & 0.5502 & 0.5457 & 0.5547 & 3.90e$-$05 \\
-Híbrido (21+9) & 0.5520 & 0.5479 & 0.5560 & 3.24e$-$05 \\
+XGBoost Base & 0.5448 & 0.5424 & 0.5473 & 1.19e$-$05 \\
+GWO (15) & 0.5501 & 0.5459 & 0.5544 & 3.55e$-$05 \\
+GWO (30) & 0.5514 & 0.5480 & 0.5547 & 2.19e$-$05 \\
+Híbrido (8+7) & 0.5511 & 0.5487 & 0.5535 & 1.14e$-$05 \\
+Híbrido (21+9) & 0.5525 & 0.5499 & 0.5551 & 1.34e$-$05 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-La prueba de Shapiro--Wilk confirma normalidad para el modelo base ($W = 0.9633$, $p = 0.8231 > 0.05$), validando el uso de pruebas paramétricas complementarias. La prueba de Wilcoxon con corrección de Holm--Bonferroni confirma que todos los métodos optimizados superan significativamente al modelo base ($p_{\text{Holm}} < 0.05$), mientras que las diferencias entre métodos optimizados no alcanzan significancia estadística ($p_{\text{Holm}} > 0.21$).
+La prueba de Shapiro--Wilk confirma normalidad para el modelo base ($W = 0.9084$, $p = 0.2701 > 0.05$) y para los híbridos (Híb-8+7: $W = 0.8931$, $p = 0.1838$; Híb-21+9: $W = 0.9338$, $p = 0.4860$), mientras que GWO-15 ($W = 0.8193$, $p = 0.0248$) y GWO-30 ($W = 0.7997$, $p = 0.0144$) presentan desviación de normalidad, justificando el uso de la prueba no paramétrica de Wilcoxon. La prueba de Wilcoxon con corrección de Holm--Bonferroni confirma que los métodos optimizados superan significativamente al modelo base ($p_{\text{Holm}} < 0.05$), mientras que las diferencias entre métodos optimizados no alcanzan significancia estadística ($p_{\text{Holm}} > 0.31$).
 
 \subsection{Resumen de Tiempos Computacionales}
 La Tabla~\ref{tab:times} presenta los tiempos de ejecución.
@@ -585,12 +588,14 @@ La Tabla~\ref{tab:times} presenta los tiempos de ejecución.
 \toprule
 Método & Tiempo (s) & OFEs \\
 \midrule
-Modelo Base & 1.4 & N/A \\
-GWO (15 Iter) & 279.9 & 900 \\
-GWO (30 Iter) & 604.4 & 1\,800 \\
-Optuna (800 Trials) & 390.2 & 900 \\
-Optuna (1\,400 Trials) & 941.3 & 1\,800 \\
-Robustez GWO-MFO & 15\,264 & -- \\
+Modelo Base & 2.0 & N/A \\
+GWO (15 Iter) & 259.1 & 900 \\
+GWO (30 Iter) & 710.9 & 1\,800 \\
+Híbrido (8+7) & 297.5 & 900 \\
+Híbrido (21+9) & 553.0 & 1\,800 \\
+Optuna (300 trials) & 390.2 & 900 \\
+Optuna (600 trials) & 941.3 & 1\,800 \\
+Robustez GWO-MFO & 11\,683 & -- \\
 Robustez Optuna & 10\,551 & -- \\
 \bottomrule
 \end{tabular}
@@ -603,16 +608,16 @@ Robustez Optuna & 10\,551 & -- \\
 \label{sec:discussion}
 
 \subsection{Interpretación de las Métricas en Contexto Desbalanceado}
-Los valores de PR-AUC obtenidos (0.54--0.56) deben interpretarse a la luz del desbalance inherente del problema. Con prevalencia $\pi = 0.22$, la línea base aleatoria (clasificador que predice la clase positiva con probabilidad $\pi$) produce PR-AUC $\approx \pi = 0.22$~\cite{davis2006}. Un PR-AUC de 0.5543 representa aproximadamente 2.5$\times$ sobre el azar, lo cual es consistente con los resultados reportados por Lessmann \textit{et al.}~\cite{lessmann2015}, quienes documentan PR-AUC en el rango 0.40--0.60 para los mejores algoritmos de su benchmark de 41 clasificadores sobre datasets crediticios.
+Los valores de PR-AUC obtenidos (0.53--0.55) deben interpretarse a la luz del desbalance inherente del problema. Con prevalencia $\pi = 0.22$, la línea base aleatoria (clasificador que predice la clase positiva con probabilidad $\pi$) produce PR-AUC $\approx \pi = 0.22$~\cite{davis2006}. Un PR-AUC de 0.5543 representa aproximadamente 2.5$\times$ sobre el azar, lo cual es consistente con los resultados reportados por Lessmann \textit{et al.}~\cite{lessmann2015}, quienes documentan PR-AUC en el rango 0.40--0.60 para los mejores algoritmos de su benchmark de 41 clasificadores sobre datasets crediticios.
 
 Es fundamental comprender que un PR-AUC de 0.55 \textbf{no} indica un modelo deficiente, sino que refleja la dificultad intrínseca del problema de predicción de incumplimiento. La literatura en scoring crediticio ha establecido que la predictibilidad del incumplimiento está inherentemente limitada por factores exógenos no observables: cambios en la situación laboral, eventos de salud, crisis económicas sectoriales y cambios regulatorios~\cite{brown2008, thomas2000}. Hand y Henley~\cite{hand1997} señalan que la predictibilidad está limitada por la naturaleza estocástica del comportamiento financiero humano, y que incluso los modelos más sofisticados no pueden capturar la totalidad de la varianza en el incumplimiento.
 
 \subsection{Análisis del Recall Bajo y sus Causas}
-Un hallazgo que requiere discusión detallada es el recall relativamente bajo (0.57--0.59) de todos los modelos evaluados. Esto implica que aproximadamente el 41--43\% de los incumplimientos reales no son detectados por los modelos. Este fenómeno tiene múltiples explicaciones fundamentadas en la literatura:
+Un hallazgo que requiere discusión detallada es el recall relativamente bajo (0.54--0.59) de todos los modelos evaluados. Esto implica que aproximadamente el 41--46\% de los incumplimientos reales no son detectados por los modelos. Este fenómeno tiene múltiples explicaciones fundamentadas en la literatura:
 
 \textbf{1) Heterogeneidad no observada:} Brown y Taylor~\cite{brown2008} demuestran que factores como la riqueza no observada, las expectativas subjetivas y los shocks idiosincráticos introducen una varianza irreducible en la predicción del incumplimiento. El dataset UCI no incluye variables como ingresos reales, patrimonio neto ni historial crediticio completo, lo que limita la capacidad predictiva~\cite{yeh2009}.
 
-\textbf{2) Trade-off inherente precisión--sensibilidad:} Thomas~\cite{thomas2000} documenta que los modelos de scoring crediticio rara vez superan el 70\% de recall sin comprometer severamente la precisión. En nuestro caso, el modelo base presenta el recall más alto (0.5878) pero con la precisión más baja implícita (TP/(TP+FP) = 780/1622 = 0.481). Los modelos optimizados mejoran PR-AUC precisamente porque logran un mejor equilibrio: el Híbrido (8+7) reduce FP de 842 a 733 ($-$12.9\%) manteniendo TP en 763 ($-$2.2\%).
+\textbf{2) Trade-off inherente precisión--sensibilidad:} Thomas~\cite{thomas2000} documenta que los modelos de scoring crediticio rara vez superan el 70\% de recall sin comprometer severamente la precisión. En nuestro caso, el modelo base presenta el recall más alto (0.5870) pero con la precisión más baja implícita (TP/(TP+FP) = 779/1609 = 0.484). Los modelos optimizados mejoran PR-AUC precisamente porque logran un mejor equilibrio: GWO (30) reduce FP de 830 a 755 ($-$9.0\%) manteniendo TP en 773 ($-$0.8\%).
 
 \textbf{3) Naturaleza del desbalance:} He y Garcia~\cite{he2009} explican que en problemas con ratio de desbalance 3.5:1, la región de decisión óptima para la clase minoritaria es inherentemente más pequeña y compleja. Los algoritmos de boosting tienden a priorizar la clase mayoritaria en las primeras iteraciones, y aunque \texttt{scale\_pos\_weight} mitiga este efecto, no lo elimina completamente~\cite{chen2016}.
 
@@ -621,7 +626,7 @@ Un hallazgo que requiere discusión detallada es el recall relativamente bajo (0
 \textbf{5) Implicación del umbral de decisión:} Fawcett~\cite{fawcett2006} señala que las métricas basadas en umbral (F1, recall, accuracy) dependen del punto de corte seleccionado (0.5 por defecto). Un análisis de umbral óptimo basado en la curva PR podría mejorar estas métricas puntuales, aunque no afectaría PR-AUC que es independiente del umbral.
 
 \subsection{La Fase MFO No Aporta Mejora Significativa}
-Un resultado honesto y relevante de este estudio es que la fase MFO \textbf{no produce mejora estadísticamente significativa} sobre GWO puro. Las comparaciones Híbrido (8+7) vs. GWO (15) y Híbrido (21+9) vs. GWO (30) no alcanzan significancia ($p_{\text{Holm}} > 0.21$). Las explicaciones plausibles incluyen:
+Un resultado honesto y relevante de este estudio es que la fase MFO \textbf{no produce mejora estadísticamente significativa} sobre GWO puro. Las comparaciones Híbrido (8+7) vs. GWO (15) y Híbrido (21+9) vs. GWO (30) no alcanzan significancia ($p_{\text{Holm}} > 0.31$). De hecho, en la evaluación puntual (single-run), los híbridos presentan PR-AUC inferior al base (Híbrido 8+7: 0.5393, $-$1.21\%; Híbrido 21+9: 0.5346, $-$2.06\%), mientras que en el análisis de robustez (10 ejecuciones) sus medias superan al base (0.5511 y 0.5525, respectivamente). Esta discrepancia se explica por la alta varianza inherente al proceso de optimización con semillas distintas. Las explicaciones plausibles incluyen:
 
 \begin{itemize}[leftmargin=*]
     \item \textbf{Dimensionalidad moderada:} Con solo 6 hiperparámetros, GWO converge eficientemente sin necesidad de refinamiento adicional. El teorema \textit{No Free Lunch}~\cite{wolpert1997} sugiere que la ventaja de la hibridación se manifiesta principalmente en espacios de alta dimensionalidad.
@@ -630,7 +635,7 @@ Un resultado honesto y relevante de este estudio es que la fase MFO \textbf{no p
     \item \textbf{Ruido en validación cruzada:} La varianza inherente de 3 pliegues puede enmascarar mejoras marginales del orden de $10^{-3}$~\cite{demsar2006}.
 \end{itemize}
 
-No obstante, el pipeline completo GWO+MFO sí supera significativamente al base ($p_{\text{Holm}} < 0.05$), lo que indica que la combinación es efectiva globalmente aunque la contribución marginal de MFO no sea detectable con $n = 10$.
+No obstante, el pipeline completo GWO+MFO sí supera significativamente al base en robustez ($p_{\text{Holm}} < 0.05$), lo que indica que la combinación es efectiva globalmente aunque la contribución marginal de MFO no sea detectable con $n = 10$.
 
 \subsection{Comparación con Trabajos Previos}
 La Tabla~\ref{tab:comparison_lit} compara nuestros resultados con estudios previos que utilizan el mismo dataset o metodologías similares.
@@ -650,7 +655,7 @@ Faris \textit{et al.}~\cite{faris2018} & GWO + SVM & -- & 0.77 & 0.80 & Feature 
 Mirjalili \textit{et al.}~\cite{mirjalili2017} & GWO + MLP & -- & 0.79 & 0.81 & Optimización de pesos \\
 Chen y Guestrin~\cite{chen2016} & XGBoost (default) & -- & 0.78 & 0.78 & Configuración por defecto \\
 Akiba \textit{et al.}~\cite{akiba2019} & Optuna + diversos & -- & -- & -- & Framework, sin dataset específico \\
-\textbf{Este trabajo} & \textbf{XGB + GWO--MFO} & \textbf{0.5541} & \textbf{0.7773} & \textbf{0.785} & Híbrido, 1\,800 OFEs \\
+\textbf{Este trabajo} & \textbf{XGB + GWO (30)} & \textbf{0.5517} & \textbf{0.7756} & \textbf{0.782} & Metaheurístico, 1\,800 OFEs \\
 \textbf{Este trabajo} & \textbf{XGB + Optuna} & \textbf{0.5543} & \textbf{0.7777} & \textbf{0.786} & Bayesiano, 1\,800 OFEs \\
 \bottomrule
 \end{tabular}
@@ -659,7 +664,7 @@ Akiba \textit{et al.}~\cite{akiba2019} & Optuna + diversos & -- & -- & -- & Fram
 Nuestros resultados son consistentes con el estado del arte: el ROC-AUC de 0.7777 se sitúa en el rango superior reportado por Lessmann \textit{et al.}~\cite{lessmann2015} (0.72--0.80), y el PR-AUC de 0.5543 se encuentra en el tercil superior de su rango (0.40--0.60). La mejora sobre la configuración por defecto de XGBoost~\cite{chen2016} (+1.55\% en PR-AUC) demuestra el valor de la optimización de hiperparámetros incluso para algoritmos ya altamente optimizados.
 
 \subsection{Híbrido GWO--MFO vs. Optuna}
-Bajo presupuestos equivalentes (1\,800 OFEs), Optuna (1\,400 trials) supera marginalmente al Híbrido (21+9) en PR-AUC puntual (0.5543 vs. 0.5507, +0.65\%). Sin embargo, en el análisis de robustez (10 ejecuciones), el Híbrido (21+9) presenta una media ligeramente superior (0.5520 vs. 0.5530 para Optuna B). Para espacios de 6 dimensiones, las metaheurísticas son competitivas con la optimización bayesiana~\cite{hutter2011}, aunque Optuna ofrece ventajas prácticas significativas: menor complejidad de implementación, poda automática de trials no prometedores, paralelización nativa y soporte para espacios de búsqueda condicionales~\cite{akiba2019}.
+Bajo presupuestos equivalentes (1\,800 OFEs), Optuna (600 trials) supera al mejor método GWO--MFO en PR-AUC puntual (0.5543 vs. 0.5517 para GWO-30, +0.47\%). En el análisis de robustez (10 ejecuciones), Optuna~B presenta una media de 0.5530 frente a 0.5525 del Híbrido (21+9) y 0.5514 de GWO-30, confirmando la ventaja marginal de la optimización bayesiana. Para espacios de 6 dimensiones, las metaheurísticas son competitivas con la optimización bayesiana~\cite{hutter2011}, aunque Optuna ofrece ventajas prácticas significativas: menor complejidad de implementación, poda automática de trials no prometedores, paralelización nativa y soporte para espacios de búsqueda condicionales~\cite{akiba2019}.
 
 \subsection{Limitaciones del Estudio}
 Se identifican las siguientes limitaciones que deben considerarse al interpretar los resultados:
@@ -683,12 +688,12 @@ Un PR-AUC de 0.5543 implica que el modelo mantiene aproximadamente 55\% de preci
 Este trabajo presenta un análisis comparativo exhaustivo de cinco estrategias de optimización de hiperparámetros para XGBoost en predicción de incumplimiento crediticio con datos desbalanceados (ratio 3.52:1). Los principales hallazgos son:
 
 \begin{enumerate}[leftmargin=*]
-    \item El Híbrido GWO(21)+MFO(9) alcanza el mejor PR-AUC medio en robustez (0.5520, +1.56\% sobre el base), mientras que Optuna (1\,400 trials) logra el mejor PR-AUC puntual (0.5543, +1.55\%). Ambos métodos son competitivos bajo presupuestos equivalentes de 1\,800 OFEs.
+    \item Entre los métodos metaheurísticos, el Híbrido GWO(21)+MFO(9) alcanza el mejor PR-AUC medio en robustez (0.5525, +1.41\% sobre el base), mientras que GWO (30 iter) logra el mejor PR-AUC puntual entre los métodos GWO--MFO (0.5517, +1.07\%). Optuna (600 trials) alcanza el mejor rendimiento global tanto puntual (0.5543, +1.55\%) como en robustez (media 0.5530, +1.51\%).
     \item Optuna ofrece ventajas prácticas significativas en simplicidad, paralelización y poda automática, siendo recomendable como primera opción en entornos productivos.
-    \item La robustez se confirma con 10 ejecuciones independientes (varianzas $< 4 \times 10^{-5}$). La prueba de Wilcoxon con corrección de Holm--Bonferroni verifica significancia estadística ($p_{\text{Holm}} < 0.05$) para todos los métodos optimizados frente al base.
-    \item La fase MFO no aporta mejora estadísticamente significativa sobre GWO puro ($p_{\text{Holm}} > 0.21$), un resultado negativo honesto que sugiere que, para espacios de 6 dimensiones, GWO es suficiente sin refinamiento adicional.
-    \item Las métricas absolutas (PR-AUC ${\approx}$ 0.55, recall ${\approx}$ 0.57) son consistentes con la literatura de scoring crediticio~\cite{lessmann2015, thomas2000}, reflejando la dificultad inherente del problema bajo desbalance de clases.
-    \item El recall bajo (0.57--0.59) se explica por la heterogeneidad no observada, el trade-off inherente precisión--sensibilidad y las limitaciones del dataset, no por deficiencias en los métodos de optimización.
+    \item La robustez se confirma con 10 ejecuciones independientes (varianzas $< 3.6 \times 10^{-5}$). La prueba de Wilcoxon con corrección de Holm--Bonferroni verifica significancia estadística ($p_{\text{Holm}} < 0.05$) para todos los métodos optimizados frente al base.
+    \item La fase MFO no aporta mejora estadísticamente significativa sobre GWO puro ($p_{\text{Holm}} > 0.31$), un resultado negativo honesto que sugiere que, para espacios de 6 dimensiones, GWO es suficiente sin refinamiento adicional. En la evaluación puntual, los híbridos incluso presentan PR-AUC inferior al base, aunque en robustez sus medias lo superan.
+    \item Las métricas absolutas (PR-AUC ${\approx}$ 0.53--0.55, recall ${\approx}$ 0.54--0.59) son consistentes con la literatura de scoring crediticio~\cite{lessmann2015, thomas2000}, reflejando la dificultad inherente del problema bajo desbalance de clases.
+    \item El recall bajo (0.54--0.59) se explica por la heterogeneidad no observada, el trade-off inherente precisión--sensibilidad y las limitaciones del dataset, no por deficiencias en los métodos de optimización.
 \end{enumerate}
 
 
