@@ -45,7 +45,7 @@ Evaluar si los algoritmos de inteligencia de enjambre pueden superar o igualar e
 |   ├── archivo-pdf.png
 │   └── CRONOGRAMA DEL PROYECTO.docx          # Planificación temporal
 │
-├── Paper_Final.pdf               # Versión final del artículo
+├── Paper.pdf               # Versión final del artículo
 │
 ├── requirements.txt                          # Dependencias del proyecto
 └── README.md                                 # Este archivo
