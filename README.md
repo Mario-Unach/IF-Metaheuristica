@@ -42,10 +42,9 @@ Evaluar si los algoritmos de inteligencia de enjambre pueden superar o igualar e
 │   │   ├── main.pdf                          # Versión compilada del paper
 │   │   ├── resultados_gwo_mfo/               # Figuras para el paper
 │   │   └── resultados_optuna/                # Figuras comparativas
-│   ├── ideas.md                              # Documentación conceptual y análisis
-│   ├── META_INFORME.docx                     # Informe técnico
 │   ├── CRONOGRAMA DEL PROYECTO.docx          # Planificación temporal
-│   └── Paper_Metaherustica.pdf               # Versión final del artículo
+│
+├── Paper_Final.pdf               # Versión final del artículo
 │
 ├── requirements.txt                          # Dependencias del proyecto
 └── README.md                                 # Este archivo
