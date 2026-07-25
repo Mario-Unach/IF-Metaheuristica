@@ -42,7 +42,8 @@ Evaluar si los algoritmos de inteligencia de enjambre pueden superar o igualar e
 │   │   ├── main.pdf                          # Versión compilada del paper
 │   │   ├── resultados_gwo_mfo/               # Figuras para el paper
 │   │   └── resultados_optuna/                # Figuras comparativas
-│   ├── CRONOGRAMA DEL PROYECTO.docx          # Planificación temporal
+|   ├── archivo-pdf.png
+│   └── CRONOGRAMA DEL PROYECTO.docx          # Planificación temporal
 │
 ├── Paper_Final.pdf               # Versión final del artículo
 │
